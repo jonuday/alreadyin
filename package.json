@@ -4,7 +4,8 @@
   "description": "A Native React app for seeing if you already have a photo of someone in a FB private group",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "heroku local"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   "homepage": "https://github.com/jonuday/alreadyin#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
   },
   "devDependencies": {
     "request": "^2.85.0"
