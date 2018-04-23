@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "heroku local"
+    "start": "heroku local",
+    "dev": "nodemon ./index.js",
+    "webpack": "./node_modules/.bin/webpack -w"
   },
   "repository": {
     "type": "git",
@@ -28,9 +30,17 @@
     "express": "^4.16.3",
     "mongoose": "^5.0.15",
     "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1"
+    "passport-facebook": "^2.1.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "request": "^2.85.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "request": "^2.85.0",
+    "webpack": "^4.6.0"
   }
 }
