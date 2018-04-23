@@ -4,6 +4,8 @@
   "description": "A Native React app for seeing if you already have a photo of someone in a FB private group",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon alreadyin/index.js",
+    "webpack": "./node_modules/.bin/webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,9 +26,17 @@
   "homepage": "https://github.com/jonuday/alreadyin#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "request": "^2.85.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "request": "^2.85.0",
+    "webpack": "^4.6.0"
   }
 }
