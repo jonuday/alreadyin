@@ -4,9 +4,10 @@
   "description": "A Native React app for seeing if you already have a photo of someone in a FB private group",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon alreadyin/index.js",
-    "webpack": "./node_modules/.bin/webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "heroku local",
+    "dev": "nodemon ./index.js",
+    "webpack": "./node_modules/.bin/webpack -w"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,9 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.3",
+    "mongoose": "^5.0.15",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
