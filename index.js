@@ -3,7 +3,12 @@
 // author Jonathan Day
 
 const express = require("express");
+const mongoose = require("mongoose");
 require('./services/passport');
+const keys = require('./config/keys');
+
+// Connect to database
+mongoose.connect(keys.mongoURI);
 
 // Declare the router.
 const app = express();
