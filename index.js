@@ -4,6 +4,8 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 const keys = require('./config/keys');
 
 require('./models/User');
@@ -14,6 +16,18 @@ mongoose.connect(keys.mongoURI);
 
 // Declare the router.
 const app = express();
+
+// Use session cookies.
+app.use(
+	cookieSession({
+		maxAge: 30 * 24 * 60 * 60 * 1000, // 30days
+		keys: [keys.cookieKey]
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Declare routes.
 require('./routes/authRoutes.js')(app);
 
 // Start server on Heroku or port 5000 locally.
