@@ -16,7 +16,14 @@ module.exports = app => {
 	// 2. Use returned profile information
 	app.get("/auth/facebook/callback", passport.authenticate("facebook"));
 
-	// 3. User test route
+	// 3. User logout 
+	app.get("/api/logout",(req,res) => {
+		req.logout();
+		// Show user as logged out
+		res.send(req.user);
+	});
+
+	// 4. User test route
 	app.get('/api/current_user',(req,res) => {
 		res.send(req.user);
 	});
