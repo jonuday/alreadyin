@@ -24,7 +24,8 @@ passport.use(
 		{
 			clientID: keys.FACEBOOK_APP_ID,
 			clientSecret: keys.FACEBOOK_APP_SECRET,
-			callbackURL: "/auth/facebook/callback"
+			callbackURL: "/auth/facebook/callback",
+			proxy: true
 		},
 		function(accessToken, refreshToken, profile, cb) {
 			new User({ facebookId: profile.id }).save();
