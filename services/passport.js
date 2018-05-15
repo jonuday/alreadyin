@@ -27,8 +27,16 @@ passport.use(
 			callbackURL: "/auth/facebook/callback",
 			proxy: true
 		},
-		function(accessToken, refreshToken, profile, cb) {
-			new User({ facebookId: profile.id }).save();
+		async (accessToken, refreshToken, profile, cb) => {
+			const existingUser = await User.findOne({ facebookId: profile.id });
+			
+			if (existingUser) {
+				return done(null, existingUser);
+			}
+
+			const user = await new User({ facebookId: profile.id }).save();
+			done(null,user);
+			
 			// Code from Passpport example
 			// User.findOrCreate({ facebookId: profile.id }, function(err, user) {
 			// 	return cb(err, user);
