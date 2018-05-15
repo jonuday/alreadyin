@@ -1,13 +1,13 @@
 {
-  "name": "alreadyin",
+  "name": "AlreadyIn",
   "version": "1.0.0",
-  "description": "A Native React app for seeing if you already have a photo of someone in a FB private group",
+  "description": "A React app for seeing if you already have a photo of someone in a FB private group",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "heroku local",
-    "dev": "nodemon ./index.js",
-    "webpack": "./node_modules/.bin/webpack -w"
+    "server": "nodemon ./index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,6 @@
   },
   "keywords": [
     "node",
-    "Native",
     "React",
     "Express"
   ],
@@ -26,23 +25,16 @@
   },
   "homepage": "https://github.com/jonuday/alreadyin#readme",
   "dependencies": {
+    "concurrently": "^3.5.1",
     "cookie-session": "^2.0.0-beta.3",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
     "mongoose": "^5.0.15",
     "nodemon": "^1.17.4",
     "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "passport-facebook": "^2.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "request": "^2.85.0",
-    "webpack": "^4.6.0"
+    "request": "^2.85.0"
   }
 }
